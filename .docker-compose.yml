@@ -1,0 +1,10 @@
+services:
+  bot:
+    platform: linux/amd64
+    build: .
+    restart: always
+    volumes:
+      - ./src/users.json:/code/users.json
+      - ./src/logs:/code/logs
+    env_file:
+      - ./.env
